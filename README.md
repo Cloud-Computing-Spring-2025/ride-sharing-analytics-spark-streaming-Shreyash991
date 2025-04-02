@@ -25,6 +25,12 @@ Ingest streaming data from a socket and parse JSON messages into a Spark DataFra
 ### Sample Output:
 Parsed data is saved to `output/parsed_stream/`.
 
+```
+trip_id,driver_id,distance_km,fare_amount,timestamp,event_time
+c41da982-4fbc-47b8-8cf8-32b8c1912f08,49,4.9,98.02,2025-04-01 23:49:52,2025-04-01T23:49:52.000Z
+f86f2bf9-e774-48b5-9e64-5fd615b7d210,42,19.18,112.28,2025-04-01 23:49:54,2025-04-01T23:49:54.000Z
+```
+
 ### Command to Run:
 ```bash
 spark-submit task1_data_ingestion.py
@@ -50,6 +56,13 @@ Aggregate data in real time to compute:
 ### Sample Output:
 Aggregated data is saved to `output/aggregated/`.
 
+```
+trip_id,driver_id,distance_km,fare_amount,timestamp,event_time
+77879db6-fe4f-4af8-99e3-a5b29baf389b,91,15.94,133.25,2025-04-01 23:52:33,2025-04-01 23:52:33
+cc53a492-218f-4439-8607-1a985894eb6c,73,45.09,31.9,2025-04-01 23:52:35,2025-04-01 23:52:35
+5ece3769-9d16-49a5-b960-94248ebea90d,71,30.66,19.43,2025-04-01 23:52:34,2025-04-01 23:52:34
+```
+
 ### Command to Run:
 ```bash
 spark-submit task2_driver_analytics.py
@@ -71,6 +84,11 @@ Perform a 5-minute windowed aggregation on `fare_amount` (sliding by 1 minute).
 ### Sample Output:
 Windowed data is saved to `output/window/`.
 
+```
+window_start,window_end,total_fare_in_window
+2025-04-02T00:57:00.000Z,2025-04-02T01:02:00.000Z,1433.83
+```
+
 ### Command to Run:
 ```bash
 spark-submit task3_time_window_analysis.py
@@ -78,6 +96,4 @@ spark-submit task3_time_window_analysis.py
 
 ---
 
-## Summary
 
-By completing this project, you will gain hands-on experience in real-time data streaming and processing using Apache Spark Structured Streaming.
