@@ -22,7 +22,7 @@ Ingest streaming data from a socket and parse JSON messages into a Spark DataFra
 4. Parse the JSON payload into columns.
 5. Write the parsed data to a CSV file.
 
-### Sample Output:
+### Result Output:
 Parsed data is saved to `output/parsed_stream/`.
 
 ```
@@ -53,7 +53,7 @@ Aggregate data in real time to compute:
    - `AVG(distance_km)` as `avg_distance`.
 4. Write the aggregated results to CSV files.
 
-### Sample Output:
+### Result Output:
 Aggregated data is saved to `output/aggregated/`.
 
 ```
@@ -81,7 +81,7 @@ Perform a 5-minute windowed aggregation on `fare_amount` (sliding by 1 minute).
 3. Use Spark’s `window` function to aggregate over a 5-minute window.
 4. Write the windowed results to CSV files.
 
-### Sample Output:
+### Result Output:
 Windowed data is saved to `output/window/`.
 
 ```
